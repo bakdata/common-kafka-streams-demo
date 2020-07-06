@@ -19,7 +19,7 @@ You can find a [blog post on medium](https://medium.com/bakdata/continuous-nlp-p
 ## Getting Started
 
 To run the demo, you can use a Kubernetes cluster with Apache Kafka. To deploy Apache Kafka into a Kubernetes Cluster, you can use the [Confluent Platform Helm chart](https://github.com/confluentinc/cp-helm-charts).
-If you test it locally, you can use [minikube]](https://github.com/confluentinc/cp-helm-charts#start-minikube).
+If you test it locally, you can use [minikube](https://github.com/confluentinc/cp-helm-charts#start-minikube).
 
 ### Preparation
 
