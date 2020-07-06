@@ -1,0 +1,19 @@
+nameOverride: nlp-tfidf
+
+replicaCount: 1
+
+image: localhost:5000/tfidf
+
+streams:
+  brokers: "kafka://my-confluent-cp-kafka-headless:9092"
+  schemaRegistryUrl: "http://my-confluent-cp-schema-registry:8081"
+  inputTopics:
+    - lemmatized-text-topic
+  outputTopic: tfidf-topic
+  config:
+    s3backed.base.path: "s3://my-bucket"
+
+commandLine:
+  S3_BACKED: "true"
+
+debug: true

@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "TfIdfScore",
+  "namespace": "com.bakdata.kafka.tfidf",
+  "fields": [
+    {
+      "name": "term",
+      "type": "string"
+    },
+    {
+      "name": "tf_idf",
+      "type": "double"
+    }
+  ]
+}

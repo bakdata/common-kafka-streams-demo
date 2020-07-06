@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "lemmas",
+            "type": {
+                "items": "string",
+                "type": "array"
+            }
+        }
+    ],
+    "name": "LemmaText",
+    "namespace": "com.bakdata.kafka",
+    "type": "record"
+ }

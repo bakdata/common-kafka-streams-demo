@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "TermFrequency",
+  "namespace": "com.bakdata.kafka.tfidf",
+  "fields": [
+    {
+      "name": "document",
+      "type": "string"
+    },
+    {
+      "name": "tf",
+      "type": "double"
+    },
+    {
+      "name": "document_count",
+      "type": "long"
+    }
+  ]
+}

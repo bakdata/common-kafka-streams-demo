@@ -1,0 +1,22 @@
+nameOverride: s3-loader
+
+replicaCount: 1
+
+image: localhost:5000/s3-loader
+
+streams:
+  brokers: "kafka://my-confluent-cp-kafka-headless:9092"
+  schemaRegistryUrl: "http://my-confluent-cp-schema-registry:8081"
+  inputTopics:
+    - input-topic
+  outputTopic: text-topic
+  config:
+    s3backed.base.path: "s3://my-bucket"
+    s3backed.max.byte.size: "0"
+
+
+commandLine:
+  S3_BACKED: "true"
+  AS_DOCUMENT: "true"
+
+debug: true

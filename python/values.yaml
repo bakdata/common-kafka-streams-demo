@@ -1,0 +1,22 @@
+nameOverride: nlp-spacy-lemmatizer
+
+replicaCount: 1
+
+image: localhost:5000/spacy-lemmatizer
+
+streams:
+  brokers: "kafka://my-confluent-cp-kafka-headless:9092"
+  schemaRegistryUrl: "http://my-confluent-cp-schema-registry:8081"
+  inputTopics:
+  - text-topic
+  outputTopic: lemmatized-text-topic
+  errorTopic: error-topic
+  config:
+    s3backed.base.path: "s3://my-bucket"
+    s3backed.max.byte.size: "0"
+    s3backed.region: "eu-central-1"
+env:
+  APP_NAME: "spacy-lemmatizer"
+  APP_S3_SERDE: "true"
+
+debug: true
