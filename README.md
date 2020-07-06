@@ -14,7 +14,7 @@ The example consists of four different applications:
 
 <!--TODO blogpost link-->
 
-You can find a [blog post on medium](https://medium.com/bakdata/xxx) with some examples and explanations of how this demo works.
+You can find a [blog post on medium](https://medium.com/bakdata/continuous-nlp-pipelines-with-python-java-and-apache-kafka-f6903e7e429d) with some examples and explanations of how this demo works.
 
 ## Getting Started
 
