@@ -1,8 +1,8 @@
-# Common Kafka Streams Demo
+# Streams Bootstrap and Faust Boostrap Demo
 
 Kafka Streaming NLP pipeline demonstrating how we use Python and Java together for NLP on large text files. It uses the following libraries that introduce common configuration options to Faust and Kafka Streams applications:
 
-- [common-kafka-streams](https://github.com/bakdata/common-kafka-streams) (Java)
+- [streams-bootstrap](https://github.com/bakdata/streams-bootstrap) (Java)
 - [faust-bootstrap](https://github.com/bakdata/faust-bootstrap) (Python)
 
 The example consists of four different applications:
@@ -10,9 +10,7 @@ The example consists of four different applications:
 * Producer: Loads files from a local source directory, uploads them to S3, and sends a record with the corresponding S3 pointer to a specific Kafka topic.
 * Loader: Stream processor that processes the records produced by the Producer, loads the content of the files from S3, and uses faust-s3-backed-serializer to serialize the message sent to the output topic.
 * spaCy Lemmatizer: Python `faust-bootstrap` application processes the records produced by the Loader, extracts non-stop-word lemmas using spaCy, and sends them as a list serialized with Avro to the output topic.
-* TfIDF-Application: Java `common-kafka-streams` application gets documents represented as a list of lemmas as input and calculates the corresponding TFIDF scores.
-
-<!--TODO blogpost link-->
+* TfIDF-Application: Java `streams-bootstrap` application gets documents represented as a list of lemmas as input and calculates the corresponding TFIDF scores.
 
 You can find a [blog post on medium](https://medium.com/bakdata/continuous-nlp-pipelines-with-python-java-and-apache-kafka-f6903e7e429d) with some examples and explanations of how this demo works.
 
@@ -29,7 +27,7 @@ To create the topics you can run `sh scripts/setup.sh <release-name>`. It requir
 
 Add our Kafka application Helm charts:
 ```bash
-helm repo add bakdata-common https://raw.githubusercontent.com/bakdata/common-kafka-streams/master/charts/
+helm repo add bakdata-common https://raw.githubusercontent.com/bakdata/streams-bootstrap/master/charts/
 ```
 
 Moreover, set up an Amazon S3 bucket to use the s3-backed SerDe. You will also need your AWS credentials for the deployment.

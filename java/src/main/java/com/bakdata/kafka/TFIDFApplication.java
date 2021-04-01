@@ -4,9 +4,8 @@ import static java.util.Collections.emptyMap;
 
 import static com.bakdata.kafka.PropertiesUtil.originals;
 
-import com.bakdata.common_kafka_streams.KafkaStreamsApplication;
-import com.bakdata.common_kafka_streams.util.TopicClient;
-import com.bakdata.common_kafka_streams.util.TopicSettings;
+import com.bakdata.kafka.util.TopicClient;
+import com.bakdata.kafka.util.TopicSettings;
 import com.bakdata.kafka.tfidf.TermFrequency;
 import com.bakdata.kafka.tfidf.TfIdfScore;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
